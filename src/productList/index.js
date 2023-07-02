@@ -33,9 +33,7 @@ const Product =()=>{
             {products.map(item=>(
                 
                 <div key={item.id}>
-                    <div>
                     <img src="${item.thumbnail}" alt="${item.name}" />
-                    </div>
                     <h3>{item.title}</h3>
                     <p>{item.price}</p>
                     <p>{item.discountPercentage}</p>
