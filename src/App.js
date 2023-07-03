@@ -3,24 +3,28 @@ import './App.css';
 import Login from './LOGIN';
 import React, { useState } from 'react';
 // import AddProductForm from './AddProductForm';
-import { BrowserRouter, Route, Router } from 'react-router-dom';
+import { BrowserRouter as Route, Router,Routes } from 'react-router-dom';
+
+// import ProductDetails from "./productDetails";
 
 import Product from './productList';
 import ProductDetails from './productDetails';
 import AddProductForm from './form';
+import Navbar from './Navbar';
 
-function App() {
-
-  
+function App() { 
   return (
-    <div>
-   <Product/>
-   <Login/>
-   <ProductDetails />
-   <AddProductForm/>
-
-    </div>
+  <Router>
+    <Navbar>
+      <Routes>
+        <Route path="./productList" element={<Product/>}/>
+        <Route path="/login" element={<Login/>}/>
+        <Route path="/Login" element={<AddProductForm/>}/>
+        {/* <Route path="/productDetails" element={<ProductDetails/>}/> */}
+      </Routes>
+    </Navbar>
+  </Router>
   );
 }
-
 export default App;
+
