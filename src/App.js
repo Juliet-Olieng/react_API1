@@ -1,25 +1,31 @@
+import "./App.css";
+import Login from "./LOGIN";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-import './App.css';
-import Login from './LOGIN';
-import { BrowserRouter as Router, Route,Routes } from 'react-router-dom';
-import Product from './productList';
-import ProductDetails from './productDetails';
-import AddProductForm from './form';
-import Navbar from './Navbar';
+import Product from "./productList";
+import ProductDetails from "./productDetails";
+import AddProductForm from "./form";
 
-function App() { 
-  return (
-  <Router>
-    <Navbar>
-      <Routes>
-        <Route path="/productList" element={<Product/>}/>
-        <Route path="/login" element={<Login/>}/>
-        <Route path="/form" element={<AddProductForm/>}/>
-        <Route path="/productDetails" element={<ProductDetails/>}/>
-      </Routes>
-    </Navbar>
-  </Router>
-  );
+function App() {
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Product />,
+    },
+    {
+      path: "login",
+      element: <Login />,
+    },
+    {
+      path: "details/:productId",
+      element: <ProductDetails />,
+    },
+    {
+      path: "add",
+      element: <AddProductForm />,
+    },
+  ]);
+  return <RouterProvider router={router}></RouterProvider>;
 }
-export default App;
 
+export default App;

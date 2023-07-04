@@ -22,3 +22,7 @@ button{
 .container{
      background-color: bisque;
 }
+img{
+     width: 200px;
+     height: 200px;
+}
