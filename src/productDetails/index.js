@@ -1,8 +1,10 @@
 import React,{useState,useEffect} from "react"
 import './style.css'
+import { useParams } from "react-router-dom";
 const ProductDetails =()=>{
     const [products,setProducts]=useState();
     const [loading,setLoading]=useState(false)
+    const{productId}=useParams
     useEffect(()=>{
         (async()=>{
             await getProductDetail()
@@ -12,7 +14,7 @@ const ProductDetails =()=>{
     const getProductDetail=async()=>{
         try{
             setLoading(true)
-            const response=await fetch('https://dummyjson.com/product/${productId}')
+            const response=await fetch(`https://dummyjson.com/product/${productId}`)
             const result=await response.json();
             setProducts(result.products);
             setLoading(false)
@@ -47,4 +49,4 @@ const ProductDetails =()=>{
         </div>
     )
 }
-export default ProductDetails
+export default ProductDetails;

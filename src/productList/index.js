@@ -2,7 +2,7 @@ import React,{useState,useEffect} from "react"
 import './style.css'
 // import { Link } from "react-router-dom";
 const Product =()=>{
-    const [products,setProducts]=useState([]);
+    const [product,setProducts]=useState([]);
     const [loading,setLoading]=useState(false)
     useEffect(()=>{
         (async()=>{
@@ -15,24 +15,25 @@ const Product =()=>{
             setLoading(true)
             const response=await fetch('https://dummyjson.com/products')
             const result=await response.json();
-            setProducts(result.products);
+            setProducts(result.product);
             setLoading(false)
         }
         catch(error){
             console.log(error.message)
         }
     };
-        console.log({products});
+        console.log({product});
         if(loading){
             return <p>Loading...</p>
     }
     return(
         <div className="container">
+{/*             
+            <button><a href="#Home">Add Home</a></button> */}
             
-            <button><a href="#Home">Add Home</a></button>
-            <div className="product">
-            {products.map(item=>(
-                // <Link to ={`./product/${item.id}`} key={item.id}/>
+            {/* <Link to ={`./product/${item.id}`} key={item.id}/> */}
+            {product.map(item=>(
+                
                 <div key={item.id}>
                     <img src="{item.thumbnail}" alt="{item.name}" />
                     <h3>{item.title}</h3>
@@ -42,7 +43,6 @@ const Product =()=>{
                 
             ))}
             </div>
-        </div>
     )
-}
-export default Product
+};
+export default Product;
