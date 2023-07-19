@@ -73,9 +73,6 @@ const Product = () => {
   }
   return (
     <div className="container">
-      <button>
-        <Link to="/">Add Home</Link>
-      </button>
       <div className="product">
         {products.map((item) => (
           <Link to={`/details/${item.id}`}>
