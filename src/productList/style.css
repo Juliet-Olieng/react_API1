@@ -1,11 +1,16 @@
 .product{
      gap: 3%;
-    margin-top: 15px;
+    /* margin-top: 15px;/ */
      display: grid;
-     grid-template-columns: repeat(3,1fr);
+     grid-template-columns: repeat(4,1fr);
      margin-bottom: 15%;
-     margin-left:3% ;
+     margin: 2%;
+    
      
+}
+#item{
+     border: rgb(13, 192, 236) solid;
+     padding: 10%;
 }
 button{
      border: none;
@@ -19,10 +24,18 @@ button{
      margin-bottom: 3%;
      
 }
-.container{
+/* .container{
      background-color: bisque;
-}
+} */
 img{
      width: 200px;
      height: 200px;
+}
+@media screen and(max-width:600px) {
+     
+     img{
+          width: 50px;
+          height: 50px;
+
+     }
 }

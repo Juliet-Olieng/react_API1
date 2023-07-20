@@ -39,20 +39,14 @@ const ProductDetails = () => {
 
   return (
     <div className="container">
-      <button>
-        <Link to="/">Add Home</Link>
-      </button>
       <div className="product">
         {products &&
           products.map((item) => (
             <div key={item.id}>
               <img src={`${item.thumbnail}`} alt={`${item.name}`} />
               <h3>{item.title}</h3>
-              <p>{item.price}</p>
-              <p>{item.discountPercentage}</p>
-              <p>{item.band}</p>
-              <p>{item.rating}</p>
-              <p>{item.stock}</p>
+              <p>description:{item.description}</p>
+            
             </div>
           ))}
       </div>
